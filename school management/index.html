@@ -1,0 +1,1055 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sky Hawk - School Management System</title>
+
+    <!-- Google Fonts: Montserrat (headings) + Open Sans (body text) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- ==================== NAVBAR ==================== -->
+    <header class="header">
+      <div class="nav-container">
+        <!-- Logo -->
+        <a href="#home" class="logo">
+          <div class="logo-box">
+            <!-- Graduation Cap Icon -->
+            <svg viewBox="0 0 24 24" class="cap-icon">
+              <path d="M22 10L12 5L2 10L12 15L22 10Z"></path>
+              <path
+                d="M6 12.5V16C6 18.8 8.7 20.5 12 20.5C15.3 20.5 18 18.8 18 16V12.5"
+              ></path>
+              <path d="M22 10V16"></path>
+            </svg>
+          </div>
+          <span class="logo-text">
+            <span class="text-sky">Sky</span>
+            <span class="text-hawk">Hawk</span>
+          </span>
+        </a>
+
+        <!-- Menu Links -->
+        <ul class="nav-menu" id="navMenu">
+          <li class="menu-close-row">
+            <button
+              class="menu-close"
+              id="menuClose"
+              type="button"
+              aria-label="Close menu"
+            >
+              &times;
+            </button>
+          </li>
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#features" class="nav-link">Features</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li class="menu-auth">
+            <a href="#login" class="btn-login">Login</a>
+            <a href="#register" class="btn-register">Register</a>
+          </li>
+        </ul>
+
+        <!-- Right Action Buttons -->
+        <div class="nav-buttons">
+          <a href="#login" class="btn-login">Login</a>
+          <a href="#register" class="btn-register">Register</a>
+        </div>
+
+        <!-- Hamburger Menu Button (Mobile) -->
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-container">
+          <!-- Left Side: Content -->
+          <div class="hero-content">
+            <!-- Badge -->
+            <div class="hero-badge">
+              <span class="dot"></span>
+              #1 Cloud Platform for Schools &amp; Academies
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="hero-title">
+              Sky <span class="text-hawk">Hawk School</span><br />
+              Management<br />
+              <span class="highlight">System</span>
+            </h1>
+
+            <!-- Paragraph -->
+            <p class="hero-desc">
+              Manage students, teachers, attendance, examinations, and school
+              activities — all in one place. Streamline administrative tasks and
+              empower your educational community.
+            </p>
+
+            <!-- Buttons -->
+            <div class="hero-btns">
+              <a href="#register" class="btn-primary">Get Started &rarr;</a>
+              <a href="#features" class="btn-secondary">Explore Features</a>
+            </div>
+
+            <!-- Checklist -->
+            <div class="hero-checks">
+              <div class="check-item">
+                <span class="check-icon">&#10003;</span>
+                <span>Instant Cloud Setup</span>
+              </div>
+              <div class="check-item">
+                <span class="check-icon">&#10003;</span>
+                <span>100% Data Security</span>
+              </div>
+              <div class="check-item">
+                <span class="check-icon">&#10003;</span>
+                <span>Parent App Included</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Side: Visual Image & Floating Cards -->
+          <div class="hero-visual">
+            <div class="image-wrapper">
+              <!-- Floating Card: Students (Top-Left) -->
+              <div class="card card-top">
+                <div class="card-icon orange-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                </div>
+                <div class="card-text">
+                  <h3>2,450+</h3>
+                  <p>Active Enrolled Students</p>
+                </div>
+              </div>
+
+              <!-- Main Photo -->
+              <img
+                src="assets/images/hero-students.jpg"
+                alt="Students studying together"
+                class="students-img"
+              />
+
+              <!-- Floating Card: Attendance (Bottom-Right) -->
+              <div class="card card-bottom">
+                <div class="card-icon green-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <div class="card-text">
+                  <h3>99.4%</h3>
+                  <p>Daily Attendance Accuracy</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== Features / CORE CAPABILITIES ==================== -->
+      <section class="features" id="features">
+        <div class="features-container">
+          <p class="features-label">CORE CAPABILITIES</p>
+          <h2 class="features-title">
+            Designed for Modern Educational Excellence
+          </h2>
+          <p class="features-desc">
+            Everything your administrative staff, educators, students, and
+            parents need inside one intuitive dashboard.
+          </p>
+
+          <div class="features-grid">
+            <!-- Card 1 -->
+            <div class="features-card">
+              <div class="features-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <h3>Student Management</h3>
+              <p>
+                Track full student lifecycles, admissions, personal profiles,
+                medical records, document vaults, and parent contact
+                information.
+              </p>
+              <a href="#features">Learn more &rarr;</a>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="features-card">
+              <div class="features-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
+              <h3>Teacher Management</h3>
+              <p>
+                Manage staff profiles, class assignments, subject allocations,
+                leave tracking, timetables, and performance evaluation metrics.
+              </p>
+              <a href="#features">Learn more &rarr;</a>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="features-card">
+              <div class="features-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="3" y="4" width="18" height="18" rx="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+              </div>
+              <h3>Attendance Tracking</h3>
+              <p>
+                Real-time digital roll calls with instant automated SMS/email
+                alerts to parents for absent students, backed by RFID biometric
+                support.
+              </p>
+              <a href="#features">Learn more &rarr;</a>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="features-card">
+              <div class="features-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <line x1="12" y1="1" x2="12" y2="23"></line>
+                  <path
+                    d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+                  ></path>
+                </svg>
+              </div>
+              <h3>Fee Management</h3>
+              <p>
+                Automate fee structures, discounts, online fee payments, overdue
+                payment reminders, and print instant branded digital invoices.
+              </p>
+              <a href="#features">Learn more &rarr;</a>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="features-card">
+              <div class="features-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                  ></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                </svg>
+              </div>
+              <h3>Examination Management</h3>
+              <p>
+                Create customized exam schedules, generate automated student
+                admit cards, input subject grading scales, and publish results.
+              </p>
+              <a href="#features">Learn more &rarr;</a>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="features-card">
+              <div class="features-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <line x1="18" y1="20" x2="18" y2="10"></line>
+                  <line x1="12" y1="20" x2="12" y2="4"></line>
+                  <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>
+              </div>
+              <h3>Academic Reports</h3>
+              <p>
+                Generate comprehensive PDF report cards, class rankings,
+                attendance percentage charts, and deep multi-year analytical
+                metrics.
+              </p>
+              <a href="#features">Learn more &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== ABOUT SECTION ==================== -->
+      <section class="about" id="about">
+        <div class="about-container">
+          <!-- Left Side: Image + Award Card -->
+          <div class="about-image">
+            <img
+              src="assets/images/about%20school.jpg"
+              alt="Sky Hawk School building and students"
+            />
+
+            <div class="about-award">
+              <div class="about-award-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                  ></polygon>
+                </svg>
+              </div>
+              <div class="about-award-text">
+                <h4>Excellence Award</h4>
+                <p>Certified Best EdTech Platform</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Side: Content -->
+          <div class="about-content">
+            <span class="about-badge">ABOUT SKY HAWK</span>
+
+            <h2 class="about-title">
+              Building a Better Future<br />
+              Through Education
+            </h2>
+
+            <p class="about-desc">
+              Sky Hawk is an enterprise-grade school management platform built
+              to bridge the gap between administrators, educators, students, and
+              guardians. By replacing fragmented paperwork with cohesive,
+              automated digital workflows, we empower academic institutions to
+              focus on what matters most: inspiring and educating the next
+              generation.
+            </p>
+
+            <!-- Stats -->
+            <div class="about-stats">
+              <div class="stat-item">
+                <h3>2,450+</h3>
+                <strong>Students</strong>
+                <span>Active &amp; Enrolled</span>
+              </div>
+              <div class="stat-item">
+                <h3>50+</h3>
+                <strong>Teachers</strong>
+                <span>Certified Faculty</span>
+              </div>
+              <div class="stat-item">
+                <h3>20+</h3>
+                <strong>Years</strong>
+                <span>Of Experience</span>
+              </div>
+            </div>
+
+            <a href="#contact" class="btn-primary"
+              >Schedule a School Demo &rarr;</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SERVICES SECTION ==================== -->
+      <section class="services" id="services">
+        <div class="services-container">
+          <span class="services-badge">END-TO-END SERVICES</span>
+          <h2 class="services-title">
+            Comprehensive Modules for School Operations
+          </h2>
+          <p class="services-desc">
+            Tailored technology services designed to make school operations
+            effortless, transparent, and error-free.
+          </p>
+
+          <div class="services-grid">
+            <!-- Service 1 -->
+            <div class="service-card">
+              <div class="service-head">
+                <div class="service-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="20"
+                    height="20"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <line x1="20" y1="8" x2="20" y2="14"></line>
+                    <line x1="23" y1="11" x2="17" y2="11"></line>
+                  </svg>
+                </div>
+                <h3>Online Admissions</h3>
+              </div>
+              <p>
+                Digital application portals, online document uploads, entrance
+                test scheduling, and instant merit list generation.
+              </p>
+              <ul class="service-list">
+                <li>Custom admission application forms</li>
+                <li>Automated applicant tracking</li>
+              </ul>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-card">
+              <div class="service-head">
+                <div class="service-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="20"
+                    height="20"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                  </svg>
+                </div>
+                <h3>Class Management</h3>
+              </div>
+              <p>
+                Smart timetable scheduling, section division, classroom resource
+                allocation, and daily syllabus tracking.
+              </p>
+              <ul class="service-list">
+                <li>Automated timetable generator</li>
+                <li>Substitute teacher auto-allocation</li>
+              </ul>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-card">
+              <div class="service-head">
+                <div class="service-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="20"
+                    height="20"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <rect x="1" y="4" width="22" height="16" rx="2"></rect>
+                    <line x1="1" y1="10" x2="23" y2="10"></line>
+                  </svg>
+                </div>
+                <h3>Fee Management</h3>
+              </div>
+              <p>
+                Multi-gateway fee collections, instant receipt generation,
+                installment schedules, and automated financial accounting logs.
+              </p>
+              <ul class="service-list">
+                <li>Zero gateway hassle &amp; split fees</li>
+                <li>Instant parent WhatsApp notifications</li>
+              </ul>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="service-card">
+              <div class="service-head">
+                <div class="service-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="20"
+                    height="20"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                    ></path>
+                  </svg>
+                </div>
+                <h3>Parent Portal</h3>
+              </div>
+              <p>
+                Dedicated mobile and web portal allowing parents to track
+                real-time attendance, homework, exams, and teacher remarks.
+              </p>
+              <ul class="service-list">
+                <li>Direct two-way messaging with teachers</li>
+                <li>Live bus GPS tracking support</li>
+              </ul>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="service-card">
+              <div class="service-head">
+                <div class="service-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="20"
+                    height="20"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path
+                      d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
+                    ></path>
+                  </svg>
+                </div>
+                <h3>Examination Management</h3>
+              </div>
+              <p>
+                Invigilation duty scheduling, automated grading rubrics, seating
+                plan mapping, and error-proof online marks submission.
+              </p>
+              <ul class="service-list">
+                <li>Configurable GPA &amp; percentage systems</li>
+                <li>One-click hall ticket downloads</li>
+              </ul>
+            </div>
+
+            <!-- Service 6 -->
+            <div class="service-card">
+              <div class="service-head">
+                <div class="service-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="20"
+                    height="20"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+                    <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+                  </svg>
+                </div>
+                <h3>Report Generation</h3>
+              </div>
+              <p>
+                Comprehensive visual analytics on student retention, revenue
+                collection, teacher workload, and academic trends.
+              </p>
+              <ul class="service-list">
+                <li>Export directly to Excel &amp; PDF</li>
+                <li>Accreditation-ready audit records</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== TESTIMONIALS SECTION ==================== -->
+      <section class="testimonials" id="testimonials">
+        <div class="testimonials-container">
+          <span class="testimonials-badge">TRUSTED COMMUNITY</span>
+          <h2 class="testimonials-title">
+            What School Leaders &amp; Parents Say
+          </h2>
+          <p class="testimonials-desc">
+            Hear firsthand how Sky Hawk is modernizing administrative workflows
+            and keeping families connected.
+          </p>
+
+          <!-- Slides (only the one with class "active" is visible) -->
+          <div class="testimonial-slider">
+            <div class="testimonial-card active">
+              <div class="quote-mark">&ldquo;</div>
+              <p class="testimonial-text">
+                As a parent of two high school students, being able to track
+                attendance, fee schedules, and upcoming exam schedules in one
+                clean portal gives our family incredible peace of mind. The
+                interface is modern, lightning-fast, and very dependable.
+              </p>
+              <div class="testimonial-footer">
+                <div class="testimonial-author">
+                  <div class="author-avatar">ER</div>
+                  <div>
+                    <h4>Elena Rodriguez</h4>
+                    <p>Parent Association Chair &amp; Mother of Two</p>
+                  </div>
+                </div>
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="quote-mark">&ldquo;</div>
+              <p class="testimonial-text">
+                Preparing timetables and exam schedules used to take our staff
+                days. With Sky Hawk it takes a few clicks, and teachers get
+                notified instantly. It has saved us a huge amount of time every
+                term.
+              </p>
+              <div class="testimonial-footer">
+                <div class="testimonial-author">
+                  <div class="author-avatar">AK</div>
+                  <div>
+                    <h4>Ahmed Khan</h4>
+                    <p>School Principal</p>
+                  </div>
+                </div>
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="quote-mark">&ldquo;</div>
+              <p class="testimonial-text">
+                Fee collection is now fully organized. Parents get receipts and
+                reminders automatically, and our accounts team no longer chases
+                payments by hand. Reports are ready whenever we need them.
+              </p>
+              <div class="testimonial-footer">
+                <div class="testimonial-author">
+                  <div class="author-avatar">SN</div>
+                  <div>
+                    <h4>Sana Noor</h4>
+                    <p>Academic Coordinator</p>
+                  </div>
+                </div>
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slider Controls -->
+          <div class="slider-controls">
+            <button
+              class="slider-btn"
+              id="prevBtn"
+              type="button"
+              aria-label="Previous testimonial"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <div class="slider-dots" id="sliderDots">
+              <button
+                class="dot-btn active"
+                type="button"
+                aria-label="Testimonial 1"
+              ></button>
+              <button
+                class="dot-btn"
+                type="button"
+                aria-label="Testimonial 2"
+              ></button>
+              <button
+                class="dot-btn"
+                type="button"
+                aria-label="Testimonial 3"
+              ></button>
+            </div>
+            <button
+              class="slider-btn"
+              id="nextBtn"
+              type="button"
+              aria-label="Next testimonial"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== CONTACT SECTION ==================== -->
+      <section class="contact" id="contact">
+        <div class="contact-container">
+          <span class="contact-badge">GET IN TOUCH</span>
+          <h2 class="contact-title">Ready to Upgrade Your Institution?</h2>
+          <p class="contact-desc">
+            Reach out to our academic solutions team for questions, custom
+            pricing, or an interactive guided walkthrough.
+          </p>
+
+          <div class="contact-grid">
+            <!-- Left: Contact Info -->
+            <div class="contact-info">
+              <h3>Contact Information</h3>
+              <p class="contact-info-text">
+                Fill out the form and our technical team will set up your
+                personalized demo environment within 24 hours.
+              </p>
+
+              <div class="info-item">
+                <div class="info-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="18"
+                    height="18"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    ></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <span>EMAIL ADDRESS</span>
+                  <p>support@skyhawk.com</p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="18"
+                    height="18"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <span>PHONE NUMBER</span>
+                  <p>+92 300 1234567</p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="18"
+                    height="18"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                    ></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div>
+                  <span>CAMPUS HEADQUARTERS</span>
+                  <p>Main Road, Mingora, Swat, Khyber Pakhtunkhwa, Pakistan</p>
+                </div>
+              </div>
+
+              <div class="support-box">
+                <strong>Support Hours:</strong> Monday - Friday, 8:00 AM - 6:00
+                PM. Emergency server assistance available for partner schools.
+              </div>
+            </div>
+
+            <!-- Right: Contact Form -->
+            <form class="contact-form demo-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="fullName">Full Name *</label>
+                  <input
+                    type="text"
+                    id="fullName"
+                    placeholder="Your full name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address *</label>
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="you@school.com"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject *</label>
+                <input
+                  type="text"
+                  id="subject"
+                  placeholder="Inquiry about school management system"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea
+                  id="message"
+                  rows="4"
+                  placeholder="Tell us about your institution, current student size, and requirements..."
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="form-btn">
+                Send Message
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+              <p class="form-msg">Thank you! Your message has been sent.</p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Column 1: Brand -->
+        <div class="footer-brand">
+          <a href="#home" class="logo footer-logo">
+            <div class="logo-box">
+              <svg viewBox="0 0 24 24" class="cap-icon">
+                <path d="M22 10L12 5L2 10L12 15L22 10Z"></path>
+                <path
+                  d="M6 12.5V16C6 18.8 8.7 20.5 12 20.5C15.3 20.5 18 18.8 18 16V12.5"
+                ></path>
+                <path d="M22 10V16"></path>
+              </svg>
+            </div>
+            <span class="logo-text">
+              <span class="text-sky">Sky</span>
+              <span class="text-hawk">Hawk</span>
+            </span>
+          </a>
+          <p>
+            Sky Hawk delivers reliable, cloud-native administration software for
+            K-12 schools, academies, colleges, and university systems.
+          </p>
+          <div class="social-links">
+            <a href="#" aria-label="Twitter">
+              <svg
+                viewBox="0 0 24 24"
+                width="16"
+                height="16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
+                ></path>
+              </svg>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <svg
+                viewBox="0 0 24 24"
+                width="16"
+                height="16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                ></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <svg
+                viewBox="0 0 24 24"
+                width="16"
+                height="16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                ></path>
+              </svg>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <svg
+                viewBox="0 0 24 24"
+                width="16"
+                height="16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"
+                ></path>
+                <polygon
+                  points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"
+                ></polygon>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#features">Core Features</a></li>
+            <li><a href="#services">School Services</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact Sales</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Modules -->
+        <div class="footer-col">
+          <h4>Modules</h4>
+          <ul>
+            <li><a href="#features">Student Registry</a></li>
+            <li><a href="#features">Teacher Portal</a></li>
+            <li><a href="#services">Fee Collection</a></li>
+            <li><a href="#features">Attendance Tracking</a></li>
+            <li><a href="#services">Report Cards</a></li>
+            <li><a href="#services">Parent Portal</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Newsletter -->
+        <div class="footer-col">
+          <h4>Stay Informed</h4>
+          <p class="footer-news-text">
+            Subscribe for educational leadership insights, product updates, and
+            EdTech webinars.
+          </p>
+          <form class="newsletter demo-form">
+            <input
+              type="email"
+              placeholder="Your work email"
+              aria-label="Email"
+              required
+            />
+            <button type="submit">Join</button>
+            <p class="form-msg">Thanks for subscribing!</p>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; 2026 Sky Hawk School Management System. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- JavaScript File -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

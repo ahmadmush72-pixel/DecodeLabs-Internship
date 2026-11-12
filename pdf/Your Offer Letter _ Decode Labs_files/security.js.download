@@ -1,0 +1,73 @@
+// ============================================
+// === ANTI-DEV TOOLS & COPY PROTECTION ===
+// ============================================
+
+// Block right-click context menu
+document.addEventListener('contextmenu', event => event.preventDefault());
+
+// Block common developer tool keyboard shortcuts
+document.addEventListener('keydown', function(event) {
+    // Block F12
+    if (event.keyCode == 123) {
+        event.preventDefault();
+        return false;
+    }
+    // Block Ctrl+Shift+I (DevTools)
+    if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+        event.preventDefault();
+        return false;
+    }
+    // Block Ctrl+Shift+J (Console)
+    if (event.ctrlKey && event.shiftKey && event.keyCode == 74) {
+        event.preventDefault();
+        return false;
+    }
+    // Block Ctrl+Shift+C (Element Inspector)
+    if (event.ctrlKey && event.shiftKey && event.keyCode == 67) {
+        event.preventDefault();
+        return false;
+    }
+    // Block Ctrl+U (View Source)
+    if (event.ctrlKey && event.keyCode == 85) {
+        event.preventDefault();
+        return false;
+    }
+    // Block Ctrl+S (Save Page)
+    if (event.ctrlKey && event.keyCode == 83) {
+        event.preventDefault();
+        return false;
+    }
+    // Block Ctrl+C / Ctrl+A (Copy/Select All)
+    if (event.ctrlKey && (event.keyCode == 67 || event.keyCode == 65)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Inject CSS to block text selection across the document
+(function() {
+    const style = document.createElement('style');
+    style.innerHTML = `
+        body {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        input, textarea {
+            -webkit-user-select: auto !important;
+            -khtml-user-select: auto !important;
+            -moz-user-select: auto !important;
+            -ms-user-select: auto !important;
+            user-select: auto !important;
+        }
+    `;
+    // Ensure the head exists before appending
+    if (document.head) {
+        document.head.appendChild(style);
+    } else {
+        document.addEventListener('DOMContentLoaded', () => document.head.appendChild(style));
+    }
+})();

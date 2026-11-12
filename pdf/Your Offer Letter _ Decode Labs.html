@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<!-- saved from url=(0079)https://www.decodelabs.tech/offer-letter-download?email=ahmadmush72%40gmail.com -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Your Offer Letter | Decode Labs</title>
+    <link rel="icon" type="image/svg+xml" href="./Your Offer Letter _ Decode Labs_files/logo.svg">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://www.decodelabs.tech/favicon-192x192.png">
+    <link rel="shortcut icon" type="image/png" sizes="48x48" href="https://www.decodelabs.tech/favicon-48x48.png">
+    <link rel="manifest" href="https://www.decodelabs.tech/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.decodelabs.tech/favicon-192x192.png">
+    <script src="./Your Offer Letter _ Decode Labs_files/saved_resource"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: { fontFamily: { 'inter': ['Inter', 'sans-serif'] }, colors: { 'cyan': { '500': '#06b6d4', '400': '#22d3ee' } } } }
+        };
+    </script>
+    <link rel="stylesheet" href="./Your Offer Letter _ Decode Labs_files/style.css">
+    <style>
+        .ol-portal-section { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 6rem 1rem 3rem; }
+        .ol-search-card { max-width: 520px; width: 100%; margin: 0 auto; background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(20px); border: 1px solid rgba(34, 211, 238, 0.15); border-radius: 1.5rem; padding: 2.5rem; box-shadow: 0 0 60px rgba(6, 182, 212, 0.08); }
+        .ol-input-wrap { position: relative; margin: 1.5rem 0; }
+        .ol-input { width: 100%; padding: 1rem 1.25rem; background: rgba(30, 41, 59, 0.8); border: 1.5px solid rgba(100, 116, 139, 0.3); border-radius: 0.75rem; color: #f1f5f9; font-size: 1.1rem; transition: border-color 0.3s; outline: none; font-family: 'Inter', sans-serif; }
+        .ol-input:focus { border-color: #22d3ee; box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.15); }
+        .ol-submit-btn { width: 100%; padding: 1rem; background: linear-gradient(135deg, #06b6d4, #0891b2); color: #fff; font-weight: 600; font-size: 1.05rem; border: none; border-radius: 0.75rem; cursor: pointer; transition: transform 0.2s; }
+        .ol-submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(6, 182, 212, 0.35); }
+        .ol-error { background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 0.75rem; padding: 1rem; color: #fca5a5; text-align: center; margin-top: 1rem; display: none; }
+        .ol-error.show { display: block; animation: fadeIn 0.3s ease; }
+
+        .ol-letter-container { display: none; margin: 0 auto; width: 100%; max-width: 800px; padding-bottom: 2rem; }
+        .ol-letter-container.show { display: flex; flex-direction: column; align-items: center; animation: fadeIn 0.5s ease; }
+        
+        /* The "Email Body" message */
+        .ol-instructions { background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(34, 211, 238, 0.3); border-radius: 1rem; padding: 2rem; margin-bottom: 2rem; color: #cbd5e1; line-height: 1.6; width: 100%; box-sizing: border-box; position: relative; }
+        .ol-instructions h2 { color: #22d3ee; font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem; }
+        .ol-instructions ul { margin-left: 1.5rem; list-style-type: disc; margin-bottom: 1rem; }
+        .ol-instructions li { margin-bottom: 0.5rem; }
+        
+        /* Read More & Social Buttons */
+        .instructions-content-wrapper { max-height: 180px; overflow: hidden; position: relative; transition: max-height 0.5s ease; }
+        .instructions-content-wrapper.expanded { max-height: 1500px; }
+        .read-more-fade { position: absolute; bottom: 45px; left: 0; right: 0; height: 80px; background: linear-gradient(transparent, rgba(15, 23, 42, 1)); pointer-events: none; transition: opacity 0.3s; border-radius: 0 0 1rem 1rem; }
+        .read-more-fade.hidden { opacity: 0; }
+        .read-more-btn { display: block; width: 100%; text-align: center; background: none; border: none; color: #22d3ee; font-weight: bold; cursor: pointer; padding-top: 0.5rem; text-decoration: underline; transition: color 0.2s; }
+        .read-more-btn:hover { color: #06b6d4; }
+        .social-btn { display: flex; align-items: center; justify-content: center; padding: 0.6rem 1rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none; transition: all 0.2s; color: white !important; text-align: center; font-size: 0.95rem; }
+        .youtube-btn { background: #ef4444; } .youtube-btn:hover { background: #dc2626; }
+        .insta-btn { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); } .insta-btn:hover { opacity: 0.9; transform: scale(0.98); }
+        .telegram-btn { background: #0088cc; } .telegram-btn:hover { background: #0077b5; transform: scale(0.98); }
+        .social-benefits-box { background: rgba(30, 41, 59, 0.5); padding: 1.25rem; border-radius: 0.75rem; border: 1px solid rgba(100, 116, 139, 0.3); margin-bottom: 1.5rem; margin-top: 1rem; }
+
+        /* The printable letter — scaled down on screen to look like an A4 preview */
+        .preview-title { color: #e2e8f0; font-weight: 600; margin-bottom: 1rem; font-size: 1.1rem; text-align: center; letter-spacing: 0.5px; }
+
+        .curvy-box {
+            border: 2px solid rgba(34, 211, 238, 0.4);
+            border-radius: 2rem; /* Special curvy box */
+            width: 250px; /* Scaled A4 width */
+            height: 353px; /* Scaled A4 height */
+            margin: 0 auto 2.5rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 20px rgba(6, 182, 212, 0.15);
+            position: relative;
+            overflow: hidden; /* This makes the document cover the box and crops the corners to be curvy */
+            background: #fff;
+            display: block;
+        }
+
+        .ol-letter { 
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.03) 0%, transparent 30%),
+                        linear-gradient(315deg, rgba(59, 130, 246, 0.03) 0%, transparent 30%),
+                        #ffffff !important; 
+            color: #1e293b !important; 
+            font-family: 'Arial', sans-serif; 
+            box-sizing: border-box;
+            margin: 0 !important;
+            padding: 15mm !important; /* EXACTLY MATCH THE PRINTED PDF PADDING */
+            
+            /* Render at true A4 pixel dimensions (794x1123), then scale to fit 250px */
+            width: 794px !important;
+            height: 1123px !important;
+            position: absolute;
+            top: 0; left: 0;
+            transform-origin: top left;
+            transform: scale(0.3148) !important; /* 250px / 794px = 0.3148 */
+        }
+        
+        /* Premium Gradient Letterhead Strips */
+        .ol-letter::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 6px;
+            background: linear-gradient(90deg, #06b6d4, #3b82f6, #8b5cf6) !important;
+        }
+        .ol-letter::after {
+            content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 6px;
+            background: linear-gradient(90deg, #8b5cf6, #3b82f6, #06b6d4) !important;
+        }
+
+        .ol-letter * { color: inherit; } /* Override tailwind text colors */
+        .ol-letter-header { padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 2px solid #e2e8f0; position: relative; }
+        
+        /* Subtle colored line under header */
+        .ol-letter-header::after {
+            content: ''; position: absolute; bottom: -2px; left: 2rem; right: 2rem; height: 2px;
+            background: linear-gradient(90deg, #06b6d4, transparent) !important;
+        }
+
+        .ol-letter-header .logo-area img { height: 50px; margin-bottom: 6px; }
+        .ol-letter-header .company-info { font-size: 0.85rem; color: #64748b; line-height: 1.3; }
+        .ol-letter-header .ref-info { text-align: right; font-size: 0.9rem; color: #475569; line-height: 1.4; }
+        
+        .ol-letter-body { padding: 1.25rem 2rem 1.5rem; line-height: 1.6; font-size: 0.92rem; }
+        .ol-letter-body p { margin-bottom: 0.75rem; }
+        
+        /* Gradient text for the subject */
+        .ol-letter-body .subject { 
+            font-weight: 800; text-align: center; font-size: 1.1rem; margin: 1.5rem 0; text-transform: uppercase; letter-spacing: 1px;
+            background: linear-gradient(90deg, #0f172a, #1e3a8a, #0f172a) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            text-decoration: none; 
+            position: relative;
+            display: inline-block;
+            left: 50%; transform: translateX(-50%);
+        }
+        .ol-letter-body .subject::after {
+            content: ''; position: absolute; bottom: -4px; left: 15%; right: 15%; height: 2px;
+            background: linear-gradient(90deg, transparent, #06b6d4, transparent) !important;
+        }
+        
+        .ol-letter-details { margin: 0.75rem 0; width: 100%; border-collapse: collapse; }
+        .ol-letter-details td { padding: 0.5rem 0.75rem; border: 1px solid #cbd5e1; font-size: 0.9rem; }
+        .ol-letter-details td:first-child { 
+            font-weight: bold; width: 35%; 
+            background: linear-gradient(90deg, rgba(6, 182, 212, 0.08), rgba(59, 130, 246, 0.03)) !important; 
+            border-left: 3px solid #06b6d4 !important;
+            color: #1e293b !important; 
+        }
+        
+        .ol-letter-footer { padding: 0 3rem 3rem 3rem; display: flex; justify-content: space-between; align-items: flex-end; margin-top: 2rem; }
+        .sig-block { margin-top: 2rem; }
+        .sig-image { height: 60px; margin-bottom: 10px; opacity: 0.8; }
+        .sig-name { font-weight: bold; color: #0f172a !important; }
+        .sig-title { color: #64748b !important; font-size: 0.9rem; }
+        
+        .ol-actions { display: flex; gap: 1rem; margin-top: 2rem; justify-content: center; }
+        .ol-actions button { padding: 0.75rem 1.5rem; border-radius: 0.75rem; font-weight: 600; cursor: pointer; transition: all 0.2s; border: none; }
+        .ol-btn-primary { background: #06b6d4; color: #fff; }
+        .ol-btn-secondary { background: rgba(30, 41, 59, 0.8); color: #e2e8f0; border: 1px solid #475569 !important; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        /* Mobile Responsive */
+        @media (max-width: 640px) {
+            .ol-portal-section { padding: 4.5rem 0.75rem 2rem; }
+            .ol-search-card { padding: 1.5rem; }
+            .ol-instructions { padding: 1.25rem; font-size: 0.88rem; }
+            .ol-instructions h2 { font-size: 1.1rem; }
+            .ol-actions { flex-direction: column; align-items: stretch; }
+            .ol-actions button { text-align: center; }
+        }
+        /* Print — margins baked into letter, no user action needed */
+        @media print {
+            @page { size: A4 portrait; margin: 0; }
+            body, html { background: #fff !important; margin: 0 !important; padding: 0 !important; overflow: hidden !important; }
+            * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+            /* Hide everything except the letter during printing, including Ad spaces */
+            #main-header, .ol-actions, #canvas-container, .ol-search-card, .ol-instructions, footer, .print-instructions, [style*="border: 1px dashed"] { display: none !important; }
+            .ol-portal-section { padding: 0 !important; display: block; min-height: auto; }
+            #content-wrapper { padding: 0 !important; margin: 0 !important; }
+            .ol-letter-container { display: block !important; padding: 0 !important; margin: 0 !important; max-width: none !important; width: 100% !important; overflow: visible !important; }
+            
+            /* Reset the curvy box and scaling for full size A4 printing */
+            .preview-title { display: none !important; }
+            .curvy-box { width: 100% !important; height: auto !important; border: none !important; border-radius: 0 !important; margin: 0 !important; padding: 0 !important; box-shadow: none !important; overflow: visible !important; position: static !important; background: #ffffff !important; }
+            .ol-letter { position: static !important; transform: none !important; width: 100% !important; height: auto !important; padding: 15mm !important; background: #ffffff !important; }
+        }
+    </style>
+    <script>
+        // Anti-flicker: hide search box immediately if we have data to render instantly
+        if (new URLSearchParams(window.location.search).get('email') && sessionStorage.getItem('decodelabs_intern_data')) {
+            document.write('<style>#ol-search { display: none !important; } #ol-result { display: flex !important; flex-direction: column; align-items: center; }</style>');
+        }
+    </script><style>#ol-search { display: none !important; } #ol-result { display: flex !important; flex-direction: column; align-items: center; }</style>
+<script src="./Your Offer Letter _ Decode Labs_files/security.js.download"></script><style>
+        body {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        input, textarea {
+            -webkit-user-select: auto !important;
+            -khtml-user-select: auto !important;
+            -moz-user-select: auto !important;
+            -ms-user-select: auto !important;
+            user-select: auto !important;
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.container{width:100%}@media (min-width: 640px){.container{max-width:640px}}@media (min-width: 768px){.container{max-width:768px}}@media (min-width: 1024px){.container{max-width:1024px}}@media (min-width: 1280px){.container{max-width:1280px}}@media (min-width: 1536px){.container{max-width:1536px}}.absolute{position:absolute}.left-0{left:0px}.right-0{right:0px}.top-0{top:0px}.z-20{z-index:20}.mx-auto{margin-left:auto;margin-right:auto}.flex{display:flex}.items-center{align-items:center}.justify-between{justify-content:space-between}.bg-slate-900{--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.px-4{padding-left:1rem;padding-right:1rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.text-2xl{font-size:1.5rem;line-height:2rem}.font-bold{font-weight:700}.text-cyan-400{--tw-text-opacity:1;color:rgb(34 211 238 / var(--tw-text-opacity, 1))}.text-gray-100{--tw-text-opacity:1;color:rgb(243 244 246 / var(--tw-text-opacity, 1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}@media (min-width: 768px){.md\:px-8{padding-left:2rem;padding-right:2rem}}@media print{.print\:bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.print\:text-black{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}}</style></head>
+<body class="bg-slate-900 text-gray-100 print:bg-white print:text-black">
+    <!-- Secure Loading Overlay -->
+    <div id="ol-loading-overlay" class="ol-overlay">
+        <div class="ol-loading-box">
+            <!-- CSS Scanning Animation -->
+            <div class="scan-container">
+                <div class="scan-line"></div>
+            </div>
+            <div id="ol-overlay-text" class="ol-overlay-text">Establishing connection...</div>
+            <div class="ol-overlay-subtext">Searching secure database</div>
+        </div>
+    </div>
+
+    <div id="content-wrapper">
+        <header id="main-header" class="py-6 px-4 md:px-8 absolute top-0 left-0 right-0 z-20">
+            <nav class="container mx-auto flex justify-between items-center">
+                <div class="text-2xl font-bold text-white"><span class="text-cyan-400">Decode</span> Labs</div>
+                <a href="https://www.decodelabs.tech/intern-portal" class="text-slate-300 hover:text-white">← Go Back</a>
+            </nav>
+        </header>
+
+        <section class="ol-portal-section">
+            <div style="width:100%">
+                
+                <!-- Search Box -->
+                <div id="ol-search" class="ol-search-card" style="display: none;">
+                    <div style="text-align:center; margin-bottom:1.5rem;">
+                        <h1 style="font-size:1.8rem; font-weight:700; color:#f1f5f9; margin-bottom:0.5rem;">Access Offer Letter</h1>
+                        <p style="color:#94a3b8; font-size:0.95rem;">Enter your registered email address to securely access your internship offer letter.</p>
+                    </div>
+                    <div class="ol-input-wrap">
+                        <input type="email" id="ol-email-input" class="ol-input" placeholder="e.g., yourname@email.com" autocomplete="email">
+                    </div>
+                    <button id="ol-submit" class="ol-submit-btn" onclick="lookupOfferLetter()">View Document</button>
+                    <div id="ol-error" class="ol-error">
+                        Email not found. Please ensure you enter the exact email used during registration.
+                    </div>
+                </div>
+
+                <!-- Offer Letter Result -->
+                <div id="ol-result" class="ol-letter-container show">
+
+                    <!-- Email Body / Formalities Message -->
+                    <div class="ol-instructions">
+                        <h2>🎉 Congratulations on Your Selection!</h2>
+                        <div class="instructions-content-wrapper" id="instructions-wrapper">
+                            <p>Welcome to Decode Labs! We are thrilled to have you on board as an intern. Please read the following important points carefully before proceeding:</p>
+                            
+                            <div class="social-benefits-box">
+                                <p style="font-weight: bold; margin-bottom: 0.75rem; color: #22d3ee; font-size: 1.05rem;">📢 Follow &amp; Subscribe for Program Benefits, Updates &amp; Free Resources:</p>
+                                <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                                    <a href="https://youtube.com/@decodelabstech" target="_blank" class="social-btn youtube-btn">📺 Subscribe on YouTube</a>
+                                    <div style="display: flex; gap: 0.75rem;">
+                                        <a href="https://www.instagram.com/official_decodelabs" target="_blank" class="social-btn insta-btn" style="flex: 1;">📸 Follow Instagram</a>
+                                        <a href="https://t.me/decodelabs_tech" target="_blank" class="social-btn telegram-btn" style="flex: 1;">✈️ Join Telegram</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <ul>
+                                <li><strong>LinkedIn:</strong> Interns must upload their offer letter on LinkedIn by tagging Decode Labs and keep their work status updated throughout the internship. This helps improve your visibility to recruiters, optimizes your LinkedIn profile, and strengthens your professional presence.</li>
+                                <li><strong>Updates &amp; Communication:</strong> All important announcements, schedule updates, and program information will be shared via the official WhatsApp group and through email. Make sure to stay active on both channels.</li>
+                                <li><strong>Project Work:</strong> You will be working on a real-world project relevant to your internship domain. Project guidelines, milestones, and resources will be provided after joining.</li>
+                                <li><strong>Submission Link:</strong> Upload projects on GitHub. Submission portal will open after 2 weeks.</li>
+                                <li><strong>Support:</strong> For any queries or concerns, feel free to reach out to us at <strong>hr@decodelabs.tech</strong> — we're always happy to help.</li>
+                            </ul>
+                        </div>
+                        <div class="read-more-fade" id="read-more-fade"></div>
+                        <button class="read-more-btn" id="read-more-btn" onclick="toggleInstructions()">Read More</button>
+                    </div>
+
+                    <!-- The Actual Offer Letter (Miniature Preview) -->
+                    <div class="preview-title">Document Preview</div>
+                    <div class="curvy-box">
+                        <div class="ol-letter" id="ol-letter-printable">
+                        <div class="ol-letter-header">
+                            <div class="logo-area" style="flex: 1;">
+                                <h1 style="font-size: 2rem; font-weight: bold; color: #0f172a; margin-bottom: 2px;">
+                                    <span style="color: #06b6d4;">Decode</span> Labs
+                                </h1>
+                                <div style="font-size: 0.78rem; color: #94a3b8; letter-spacing: 0.08em; margin-bottom: 6px; text-transform: uppercase;">Your Digital Lab</div>
+                                <div class="company-info">
+                                    📞 +91 92360 11887 / 94739 35188<br>
+                                    ✉ hr@decodelabs.tech
+                                </div>
+                            </div>
+                            
+                            <div style="flex: 0 0 auto; display: flex; align-items: center; justify-content: center; padding: 0 1rem;">
+                                <img src="./Your Offer Letter _ Decode Labs_files/logo.svg" alt="Logo" style="width: 130px; height: auto; border: none; outline: none; background: transparent; box-shadow: none; user-select: none;">
+                            </div>
+
+                            <div class="ref-info" style="flex: 1; text-align: right;">
+                                <div style="display:inline-block; background:#0f172a; color:#22d3ee; font-size:0.65rem; font-weight:700; letter-spacing:0.08em; padding:2px 8px; border-radius:3px; text-transform:uppercase; margin-bottom:6px;">✦ Govt. Registered Enterprise</div><br>
+                                <strong>Date:</strong> <span id="ol-date">7 November 2026</span>
+                            </div>
+                        </div>
+                        
+                        <div class="ol-letter-body">
+                            <div style="margin-bottom: 1.5rem; padding: 0.75rem 1rem; background: linear-gradient(90deg, rgba(6, 182, 212, 0.08), transparent); border-left: 3px solid #06b6d4; border-radius: 0 4px 4px 0;">
+                                <p style="margin: 0; font-size: 0.95rem;"><strong>To:</strong> <span id="ol-name">Mushtaq Ahmad</span></p>
+                                <p style="margin: 0.2rem 0 0; font-size: 0.9rem; color: #64748b;"><strong>Date:</strong> <span id="ol-date-body">7 November 2026</span></p>
+                            </div>
+                            
+                            <div class="subject">OFFER OF INTERNSHIP</div>
+                            
+                            <p>Dear <span id="ol-fname">Mushtaq</span>,</p>
+                            <p>Following your application and assessment, we are delighted to offer you an internship position at <strong>Decode Labs</strong>. We believe that your skills and academic background will be a valuable asset to our programs.</p>
+                            
+                            <p>The details of your internship offer are as follows:</p>
+                            
+                            <table class="ol-letter-details">
+                                <tbody><tr><td>Position</td><td id="ol-position">Full Stack development Intern</td></tr>
+                                <tr><td>Department / Track</td><td id="ol-dept">Full Stack development</td></tr>
+                                <tr><td>Start Date</td><td id="ol-start">7 November 2026</td></tr>
+                                <tr><td>End Date</td><td id="ol-end">7 December 2026</td></tr>
+                                <tr><td>Mode of Work</td><td>Remote / Virtual</td></tr>
+                            </tbody></table>
+                            
+                            <p>During this internship, you will be expected to work on assigned projects, complete milestones on time, and participate in mentor-led sessions. This is a learning-focused internship designed to provide you with hands-on industry experience and professional growth.</p>
+                            
+                            <p>Upon successful completion of the internship and required project submissions, you will be awarded a verified Certificate of Completion and a Letter of Recommendation based on your performance.</p>
+                            
+                            <p>We welcome you to Decode Labs and look forward to a mutually rewarding learning experience.</p>
+                            
+                            <div style="margin-top: 1.5rem; position: relative;">
+                                <p style="margin-bottom: 0.25rem;">Warm regards,</p>
+                                <div style="font-family: 'Brush Script MT', cursive; font-size: 26px; color: #0f172a; margin: 4px 0;">Decode Labs Team</div>
+                                <div style="font-weight: 600; color: #0f172a; font-size: 0.95rem;">www.decodelabs.tech</div>
+                                <!-- Stamp: absolute positioned bottom-right of sign-off -->
+                                <img src="./Your Offer Letter _ Decode Labs_files/stamp.webp" alt="Official Stamp" style="position:absolute; bottom:-10px; right:0; width:110px; height:110px; object-fit:contain; opacity:0.92;">
+                            </div>
+                        </div>
+                    </div> <!-- Close ol-letter -->
+                    </div> <!-- Close curvy-box -->
+
+                    <div class="ol-actions">
+                        <button class="ol-btn-primary" onclick="printOfferLetter()">⬇ Download Offer Letter as PDF</button>
+                        <button class="ol-btn-secondary" onclick="location.reload()">Search Another</button>
+                    </div>
+                    <div class="print-instructions" style="text-align:center; margin-top:1.5rem; font-size:0.85rem; color:#94a3b8; max-width:550px; margin-left:auto; margin-right:auto; line-height: 1.6; background: rgba(15, 23, 42, 0.6); padding: 1rem; border-radius: 0.75rem; border: 1px solid rgba(100, 116, 139, 0.3);">
+                        💡 <strong style="color:#e2e8f0;">For perfect document quality:</strong> When the print screen opens, ensure your <strong>Paper Size is set to "A4"</strong>, uncheck <em>"Headers and footers"</em>, and set Margins to <em>"None"</em> before clicking Save.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <style>
+        /* Modal Overlay Styles */
+        .ol-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(5px); z-index: 9999; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+        .ol-overlay.show { opacity: 1; pointer-events: auto; }
+        
+        .ol-loading-box { background: #1e293b; border: 1px solid rgba(34, 211, 238, 0.2); border-radius: 1.25rem; padding: 2.5rem 2rem; width: 90%; max-width: 380px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 20px 60px rgba(0,0,0,0.6); }
+        
+        /* CSS Scanning Document Animation */
+        .scan-container { position: relative; width: 70px; height: 90px; border: 3px solid #64748b; border-radius: 8px; margin-bottom: 1.5rem; overflow: hidden; background: #0f172a; }
+        .scan-container::before { content: ''; position: absolute; top: 15px; left: 12px; right: 12px; height: 4px; background: #334155; box-shadow: 0 14px 0 #334155, 0 28px 0 #334155, 0 42px 0 #334155; }
+        .scan-line { position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: #22d3ee; box-shadow: 0 0 15px 4px rgba(34, 211, 238, 0.8); animation: scan 2s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+        @keyframes scan { 0%, 100% { top: -10px; opacity: 0; } 10%, 90% { opacity: 1; } 50% { top: 95px; } }
+        
+        .ol-overlay-text { color: #f8fafc; font-size: 1.1rem; font-weight: 600; text-align: center; }
+        .ol-overlay-subtext { color: #22d3ee; font-size: 0.85rem; margin-top: 0.5rem; animation: pulseText 1.5s infinite; text-transform: uppercase; letter-spacing: 1px; }
+        @keyframes pulseText { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+
+        /* Spinner styles */
+        .spinner {
+            border: 3px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top: 3px solid #fff;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+    <script>
+    const GOOGLE_SCRIPT_API_URL = "https://script.google.com/macros/s/AKfycbwec1gW-RqOhBNwYme54-BpH611zyrIz7lsG5ZZzAgsSEBUYuYCx7-LbyW8buKzcQkwjg/exec";
+
+
+    
+    /**
+     * Timezone-safe date parser.
+     * Google Sheets may send dates as "2026-05-15" (ISO) or "5/15/2026" or
+     * "May 15, 2026" etc. Using `new Date(str)` on ISO strings treats them as
+     * UTC midnight, which shifts to the PREVIOUS day for users west of UTC.
+     * This function extracts year/month/day WITHOUT timezone conversion.
+     */
+    function parseDateSafe(dateStr) {
+        if (!dateStr) return null;
+        const s = String(dateStr).trim();
+
+        // Try ISO format first: "2026-05-15" or "2026-05-15T..."
+        const isoMatch = s.match(/^(\d{4})-(\d{1,2})-(\d{1,2})/);
+        if (isoMatch) {
+            return { year: parseInt(isoMatch[1]), month: parseInt(isoMatch[2]), day: parseInt(isoMatch[3]) };
+        }
+
+        // Try US format: "5/15/2026" or "05/15/2026"
+        const usMatch = s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})/);
+        if (usMatch) {
+            return { year: parseInt(usMatch[3]), month: parseInt(usMatch[1]), day: parseInt(usMatch[2]) };
+        }
+
+        // Try DD/MM/YYYY format
+        const ddmmMatch = s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})/);
+        if (ddmmMatch && parseInt(ddmmMatch[1]) > 12) {
+            return { year: parseInt(ddmmMatch[3]), month: parseInt(ddmmMatch[2]), day: parseInt(ddmmMatch[1]) };
+        }
+
+        // Try long format: "May 15, 2026" or "15 May 2026"
+        const months = { jan:1, feb:2, mar:3, apr:4, may:5, jun:6, jul:7, aug:8, sep:9, oct:10, nov:11, dec:12 };
+        const longMatch1 = s.match(/^([A-Za-z]+)\s+(\d{1,2}),?\s+(\d{4})/);
+        if (longMatch1) {
+            const mon = months[longMatch1[1].substring(0,3).toLowerCase()];
+            if (mon) return { year: parseInt(longMatch1[3]), month: mon, day: parseInt(longMatch1[2]) };
+        }
+        const longMatch2 = s.match(/^(\d{1,2})\s+([A-Za-z]+),?\s+(\d{4})/);
+        if (longMatch2) {
+            const mon = months[longMatch2[2].substring(0,3).toLowerCase()];
+            if (mon) return { year: parseInt(longMatch2[3]), month: mon, day: parseInt(longMatch2[1]) };
+        }
+
+        // Fallback: use Date but force LOCAL interpretation
+        const d = new Date(s + (s.includes('T') ? '' : 'T00:00:00'));
+        if (!isNaN(d.getTime())) {
+            return { year: d.getFullYear(), month: d.getMonth() + 1, day: d.getDate() };
+        }
+
+        return null;
+    }
+
+    function formatToDDMMYYYY(dateStr) {
+        const parsed = parseDateSafe(dateStr);
+        if (!parsed) return dateStr || "";
+        return `${String(parsed.day).padStart(2, '0')}/${String(parsed.month).padStart(2, '0')}/${parsed.year}`;
+    }
+
+    function formatToLongDate(dateStr) {
+        const parsed = parseDateSafe(dateStr);
+        if (!parsed) return dateStr || "";
+        const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+        return `${parsed.day} ${monthNames[parsed.month - 1]} ${parsed.year}`;
+    }
+
+    async function lookupOfferLetter() {
+        const inputRaw = document.getElementById('ol-email-input').value;
+        const searchEmail = inputRaw.trim().toLowerCase(); 
+        const errorEl = document.getElementById('ol-error');
+        const submitBtn = document.getElementById('ol-submit');
+        
+        errorEl.classList.remove('show');
+
+        if (!searchEmail || !searchEmail.includes('@')) {
+            errorEl.textContent = 'Please enter a valid email address.';
+            errorEl.classList.add('show');
+            return;
+        }
+
+        // Show loading state with a spinner
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<span class="spinner"></span> Securing your data...';
+        submitBtn.disabled = true;
+
+        // Show the cool fullscreen overlay animation
+        const overlay = document.getElementById('ol-loading-overlay');
+        const overlayText = document.getElementById('ol-overlay-text');
+        overlay.classList.add('show');
+        
+        const loadingMessages = [
+            "Establishing connection...",
+            "Encrypting request...",
+            "Querying database...",
+            "Scanning records...",
+            "Generating document..."
+        ];
+        
+        let msgIndex = 0;
+        const msgInterval = setInterval(() => {
+            msgIndex = (msgIndex + 1) % loadingMessages.length;
+            overlayText.textContent = loadingMessages[msgIndex];
+        }, 1800);
+
+        try {
+            const response = await fetch(`${GOOGLE_SCRIPT_API_URL}?email=${encodeURIComponent(searchEmail)}`);
+            const result = await response.json();
+
+            clearInterval(msgInterval);
+            overlay.classList.remove('show');
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+
+            if (result.success && result.data) {
+                const d = result.data;
+                // Use the start date from the spreadsheet as the letter date
+                // This avoids timezone issues from using the user's local clock
+                const letterDate = formatToLongDate(d.startDate);
+                
+                document.getElementById('ol-name').textContent = d.fullName;
+                document.getElementById('ol-fname').textContent = d.firstName || d.fullName.split(' ')[0];
+                document.getElementById('ol-date').textContent = letterDate;
+                document.getElementById('ol-date-body').textContent = letterDate;
+                
+                document.getElementById('ol-position').textContent = d.domain + ' Intern';
+                document.getElementById('ol-dept').textContent = d.domain;
+                
+                // Format the dates in professional long format (timezone-safe)
+                document.getElementById('ol-start').textContent = formatToLongDate(d.startDate);
+                document.getElementById('ol-end').textContent = formatToLongDate(d.endDate);
+
+                // Show result
+                document.getElementById('ol-search').style.display = 'none';
+                document.getElementById('ol-result').classList.add('show');
+            } else {
+                errorEl.textContent = 'Email not found. Please ensure you entered the exact email used during registration.';
+                errorEl.classList.add('show');
+            }
+        } catch (error) {
+            console.error("API Error:", error);
+            clearInterval(msgInterval);
+            overlay.classList.remove('show');
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+            errorEl.textContent = 'Failed to connect to the server. Please try again later.';
+            errorEl.classList.add('show');
+        }
+    }
+
+    function printOfferLetter() {
+        // Use the browser's native, perfect PDF engine.
+        window.print();
+    }
+
+    function toggleInstructions() {
+        const wrapper = document.getElementById('instructions-wrapper');
+        const fade = document.getElementById('read-more-fade');
+        const btn = document.getElementById('read-more-btn');
+        if (wrapper.classList.contains('expanded')) {
+            wrapper.classList.remove('expanded');
+            fade.classList.remove('hidden');
+            btn.textContent = 'Read More';
+        } else {
+            wrapper.classList.add('expanded');
+            fade.classList.add('hidden');
+            btn.textContent = 'Show Less';
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Block F12 and Right click
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.addEventListener('keydown', function(e) {
+            if(e.key === 'F12' || e.keyCode === 123) { e.preventDefault(); return false; }
+            if(e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) { e.preventDefault(); return false; }
+            if(e.ctrlKey && e.key === 'u') { e.preventDefault(); return false; }
+        });
+
+        document.getElementById('ol-email-input').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') lookupOfferLetter();
+        });
+
+        // Automatically render if email is provided in URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const autoEmail = urlParams.get('email');
+        if (autoEmail) {
+            try {
+                localStorage.setItem('decodelabs_offer_downloaded_' + autoEmail.trim().toLowerCase(), 'true');
+            } catch (e) {}
+            document.getElementById('ol-email-input').value = autoEmail;
+            
+            try {
+                const storedDataStr = sessionStorage.getItem('decodelabs_intern_data');
+                if (storedDataStr) {
+                    const d = JSON.parse(storedDataStr);
+                    // Render directly without API call
+                    const letterDate = formatToLongDate(d.startDate);
+                    document.getElementById('ol-name').textContent = d.fullName;
+                    document.getElementById('ol-fname').textContent = d.firstName || d.fullName.split(' ')[0];
+                    document.getElementById('ol-date').textContent = letterDate;
+                    document.getElementById('ol-date-body').textContent = letterDate;
+                    document.getElementById('ol-position').textContent = (d.domain || d.track || '') + ' Intern';
+                    document.getElementById('ol-dept').textContent = (d.domain || d.track || '');
+                    document.getElementById('ol-start').textContent = formatToLongDate(d.startDate);
+                    document.getElementById('ol-end').textContent = formatToLongDate(d.endDate);
+
+                    document.getElementById('ol-search').style.display = 'none';
+                    document.getElementById('ol-result').classList.add('show');
+                } else {
+                    lookupOfferLetter();
+                }
+            } catch(e) {
+                lookupOfferLetter();
+            }
+        }
+    });
+    </script>
+
+
+</body></html>
