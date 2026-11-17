@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard - Sky Hawk School Management System</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+  </head>
+  <body>
+    <!-- Top Navigation -->
+    <header class="header">
+      <div class="nav-container">
+        <a href="index.html" class="logo">
+          <div class="logo-box">
+            <svg viewBox="0 0 24 24" class="cap-icon">
+              <path d="M22 10L12 5L2 10L12 15L22 10Z"></path>
+              <path
+                d="M6 12.5V16C6 18.8 8.7 20.5 12 20.5C15.3 20.5 18 18.8 18 16V12.5"
+              ></path>
+              <path d="M22 10V16"></path>
+            </svg>
+          </div>
+          <span class="logo-text">
+            <span class="text-sky">Sky</span>
+            <span class="text-hawk">Hawk</span>
+          </span>
+        </a>
+
+        <ul class="nav-menu" id="navMenu">
+          <li class="menu-close-row">
+            <button class="menu-close" id="menuClose" type="button">&times;</button>
+          </li>
+          <li><a href="index.html" class="nav-link">Main Site</a></li>
+          <li><a href="admin-dashboard.html" class="nav-link active">Admin Dashboard</a></li>
+          <li class="menu-auth">
+            <button onclick="logoutUser()" class="btn-logout">Logout</button>
+          </li>
+        </ul>
+
+        <div class="nav-buttons">
+          <button onclick="logoutUser()" class="btn-logout">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+              <polyline points="16 17 21 12 16 7"></polyline>
+              <line x1="21" y1="12" x2="9" y2="12"></line>
+            </svg>
+            Logout
+          </button>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Dashboard Content -->
+    <main class="dashboard-wrapper">
+      <div class="dashboard-container">
+        
+        <!-- Header User Bar -->
+        <div class="dash-header-bar">
+          <div class="dash-user-badge">
+            <div class="dash-avatar" id="userAvatar">A</div>
+            <div class="dash-user-info">
+              <h2 id="userName">Administrator</h2>
+              <p><span class="role-pill admin-pill">Admin Role</span> &bull; <span id="userEmail">admin@skyhawk.com</span></p>
+            </div>
+          </div>
+          <div class="dash-actions">
+            <button onclick="fetchStudents()" class="btn-table-action" style="padding: 8px 16px;">
+              Refresh Data
+            </button>
+          </div>
+        </div>
+
+        <!-- Alert Notification Box -->
+        <div id="dashboardAlert" class="alert-box"></div>
+
+        <!-- Summary Statistics Cards -->
+        <div class="stat-cards-grid">
+          <div class="stat-card">
+            <div class="stat-icon orange">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <div class="stat-content">
+              <h3 id="statTotalStudents">--</h3>
+              <p>Registered Students</p>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon green">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+            <div class="stat-content">
+              <h3 id="statActiveStudents">--</h3>
+              <p>Active Students</p>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon blue">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+              </svg>
+            </div>
+            <div class="stat-content">
+              <h3 id="statClassesCount">4</h3>
+              <p>Active Grade Levels</p>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon purple">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <div class="stat-content">
+              <h3>Enforced</h3>
+              <p>Role Middleware</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student Management Table Panel -->
+        <div class="panel-card">
+          <div class="panel-card-header">
+            <h3>Registered Students Management</h3>
+            <div class="table-search-box">
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Search students by name, ID..."
+                onkeyup="filterStudentTable()"
+              />
+            </div>
+          </div>
+
+          <div class="panel-card-body" style="padding: 0;">
+            <div class="table-responsive">
+              <table class="student-data-table" id="studentsTable">
+                <thead>
+                  <tr>
+                    <th>Admission No.</th>
+                    <th>Student Name</th>
+                    <th>Email Address</th>
+                    <th>Grade & Section</th>
+                    <th>Contact Phone</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="studentTableBody">
+                  <tr>
+                    <td colspan="7" style="text-align: center; padding: 30px; color: var(--text-gray);">
+                      Loading student records from Laravel backend...
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Student Details Modal -->
+    <div id="studentModal" class="modal-overlay">
+      <div class="modal-box">
+        <div class="modal-header">
+          <h3 id="modalStudentName">Student Profile Details</h3>
+          <button class="modal-close-btn" onclick="closeStudentModal()">&times;</button>
+        </div>
+        <div class="modal-body" id="modalStudentBody">
+          <!-- Populated dynamically -->
+        </div>
+        <div class="modal-footer">
+          <button class="btn-table-action" onclick="closeStudentModal()">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-bottom">
+        <p>&copy; 2026 Sky Hawk School Management System. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/auth.js"></script>
+    <script>
+      // 1. Role-based protection: only 'admin' can view this page
+      if (!protectPage('admin')) {
+        // Redirect handled in protectPage
+      }
+
+      // Populate current user info
+      const currentUser = getUser();
+      if (currentUser) {
+        document.getElementById('userName').textContent = currentUser.name || 'Administrator';
+        document.getElementById('userEmail').textContent = currentUser.email || '';
+        document.getElementById('userAvatar').textContent = (currentUser.name || 'A')[0].toUpperCase();
+      }
+
+      // Mobile Menu
+      const hamburger = document.getElementById("hamburger");
+      const navMenu = document.getElementById("navMenu");
+      const menuClose = document.getElementById("menuClose");
+      if (hamburger && navMenu) {
+        hamburger.addEventListener("click", () => navMenu.classList.toggle("open"));
+        menuClose.addEventListener("click", () => navMenu.classList.remove("open"));
+      }
+
+      let allStudentsList = [];
+
+      // 2. Fetch students from Admin API
+      async function fetchStudents() {
+        const tableBody = document.getElementById('studentTableBody');
+        const alertBox = document.getElementById('dashboardAlert');
+
+        tableBody.innerHTML = `
+          <tr>
+            <td colspan="7" style="text-align: center; padding: 30px; color: var(--text-gray);">
+              Fetching student records from Laravel API...
+            </td>
+          </tr>
+        `;
+
+        const result = await apiRequest('/admin/students', 'GET');
+
+        if (result.ok && result.data.status) {
+          allStudentsList = result.data.data.students || [];
+
+          // Update stats
+          document.getElementById('statTotalStudents').textContent = allStudentsList.length;
+          const activeCount = allStudentsList.filter(s => (s.status || '').toLowerCase() === 'active').length;
+          document.getElementById('statActiveStudents').textContent = activeCount;
+
+          renderStudentsTable(allStudentsList);
+        } else {
+          const errorMsg = result.data.message || 'Failed to load students. Backend access error.';
+          alertBox.className = 'alert-box alert-error show';
+          alertBox.innerHTML = `<strong>${errorMsg}</strong>`;
+
+          tableBody.innerHTML = `
+            <tr>
+              <td colspan="7" style="text-align: center; padding: 30px; color: #dc2626;">
+                ${errorMsg}
+              </td>
+            </tr>
+          `;
+        }
+      }
+
+      // Render table rows
+      function renderStudentsTable(students) {
+        const tableBody = document.getElementById('studentTableBody');
+
+        if (students.length === 0) {
+          tableBody.innerHTML = `
+            <tr>
+              <td colspan="7" style="text-align: center; padding: 30px; color: var(--text-gray);">
+                No student records found in the database.
+              </td>
+            </tr>
+          `;
+          return;
+        }
+
+        let html = '';
+        students.forEach((student, index) => {
+          const userName = student.user ? student.user.name : 'N/A';
+          const userEmail = student.user ? student.user.email : 'N/A';
+          const admissionNo = student.admission_number || `SH-${student.id}`;
+          const gradeSection = `${student.grade_level || 'Grade 10'} (${student.section || 'A'})`;
+          const phone = student.phone || 'N/A';
+          const status = student.status || 'active';
+
+          html += `
+            <tr>
+              <td><strong>${escapeHtml(admissionNo)}</strong></td>
+              <td>
+                <div style="font-weight: 600; color: var(--dark-color);">${escapeHtml(userName)}</div>
+              </td>
+              <td>${escapeHtml(userEmail)}</td>
+              <td>${escapeHtml(gradeSection)}</td>
+              <td>${escapeHtml(phone)}</td>
+              <td>
+                <span class="badge-status ${status.toLowerCase()}">${escapeHtml(status.toUpperCase())}</span>
+              </td>
+              <td>
+                <button class="btn-table-action" onclick="viewStudentDetails(${index})">
+                  View Profile
+                </button>
+              </td>
+            </tr>
+          `;
+        });
+
+        tableBody.innerHTML = html;
+      }
+
+      // Search filter
+      function filterStudentTable() {
+        const query = document.getElementById('searchInput').value.toLowerCase();
+        const filtered = allStudentsList.filter(s => {
+          const name = s.user ? s.user.name.toLowerCase() : '';
+          const email = s.user ? s.user.email.toLowerCase() : '';
+          const adm = (s.admission_number || '').toLowerCase();
+          const grade = (s.grade_level || '').toLowerCase();
+          return name.includes(query) || email.includes(query) || adm.includes(query) || grade.includes(query);
+        });
+        renderStudentsTable(filtered);
+      }
+
+      // Modal Details
+      function viewStudentDetails(index) {
+        const student = allStudentsList[index];
+        if (!student) return;
+
+        const modal = document.getElementById('studentModal');
+        const modalTitle = document.getElementById('modalStudentName');
+        const modalBody = document.getElementById('modalStudentBody');
+
+        const userName = student.user ? student.user.name : 'Student Details';
+        modalTitle.textContent = `${userName} - Details`;
+
+        modalBody.innerHTML = `
+          <div class="profile-detail-list">
+            <div class="profile-detail-item">
+              <span class="label">Admission Number:</span>
+              <span class="value">${escapeHtml(student.admission_number || 'N/A')}</span>
+            </div>
+            <div class="profile-detail-item">
+              <span class="label">Full Name:</span>
+              <span class="value">${escapeHtml(student.user ? student.user.name : 'N/A')}</span>
+            </div>
+            <div class="profile-detail-item">
+              <span class="label">Email Address:</span>
+              <span class="value">${escapeHtml(student.user ? student.user.email : 'N/A')}</span>
+            </div>
+            <div class="profile-detail-item">
+              <span class="label">Contact Phone:</span>
+              <span class="value">${escapeHtml(student.phone || 'N/A')}</span>
+            </div>
+            <div class="profile-detail-item">
+              <span class="label">Date of Birth:</span>
+              <span class="value">${escapeHtml(student.date_of_birth ? student.date_of_birth.substring(0, 10) : 'N/A')}</span>
+            </div>
+            <div class="profile-detail-item">
+              <span class="label">Gender:</span>
+              <span class="value">${escapeHtml(student.gender || 'N/A')}</span>
+            </div>
+            <div class="profile-detail-item">
+              <span class="label">Grade / Class:</span>
+              <span class="value">${escapeHtml(student.grade_level || 'N/A')} (Section ${escapeHtml(student.section || 'A')})</span>
+            </div>
+            <div class="profile-detail-item">
+              <span class="label">Guardian / Parent Name:</span>
+              <span class="value">${escapeHtml(student.parent_name || 'N/A')}</span>
+            </div>
+            <div class="profile-detail-item">
+              <span class="label">Guardian Phone:</span>
+              <span class="value">${escapeHtml(student.parent_phone || 'N/A')}</span>
+            </div>
+            <div class="profile-detail-item">
+              <span class="label">Residential Address:</span>
+              <span class="value">${escapeHtml(student.address || 'N/A')}</span>
+            </div>
+            <div class="profile-detail-item">
+              <span class="label">Enrollment Status:</span>
+              <span class="value"><span class="badge-status active">${escapeHtml((student.status || 'Active').toUpperCase())}</span></span>
+            </div>
+          </div>
+        `;
+
+        modal.classList.add('show');
+      }
+
+      function closeStudentModal() {
+        document.getElementById('studentModal').classList.remove('show');
+      }
+
+      function escapeHtml(text) {
+        if (!text) return '';
+        const map = {
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          '"': '&quot;',
+          "'": '&#039;'
+        };
+        return String(text).replace(/[&<>"']/g, m => map[m]);
+      }
+
+      // Initial load
+      fetchStudents();
+    </script>
+  </body>
+</html>

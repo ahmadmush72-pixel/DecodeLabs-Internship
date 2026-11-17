@@ -63,15 +63,30 @@ No installation is needed.
 
 ## Notes
 
-- The contact form and newsletter form are front-end only. They show a thank-you message but don't send data anywhere, because there is no backend yet.
+- The contact form and newsletter form are front-end only. They show a thank-you message but don't send data anywhere.
 - The contact details, testimonials and statistics are sample content for demonstration.
 
-## Future Improvements
+## Authentication & Dashboards (Integrated with Laravel Backend)
 
-- Login and Register pages
-- Admin, teacher and parent dashboards
-- Backend and database integration (for example Node.js and MongoDB)
-- Working contact form with email delivery
+- **Registration** (`register.html`) – Register as a Student (with admission fields) or Administrator.
+- **Login** (`login.html`) – Connects with Laravel Sanctum API to authenticate users securely.
+- **Admin Dashboard** (`admin-dashboard.html`) – Full student management registry table with search, statistics, and detail view. Protected by Laravel `role:admin` middleware.
+- **Student Dashboard** (`student-dashboard.html`) – Profile portal displaying personal, academic, and guardian details. Protected by `role:student` middleware.
+
+### Demo Credentials
+- **Admin:** `admin@skyhawk.com` | Password: `password123`
+- **Student:** `student@skyhawk.com` | Password: `password123`
+
+## How to Run the Project
+
+1. **Start the Laravel Backend Server:**
+   ```bash
+   cd backend-project
+   php artisan serve --port=8000
+   ```
+2. **Open the Frontend:**
+   - Open `school management/index.html` in your web browser (or using VS Code Live Server at `http://localhost:5500`).
+   - Navigate to **Login** or **Register** to access the dashboards.
 
 ## Author
 

@@ -82,3 +82,23 @@ demoForms.forEach((form) => {
     form.querySelector(".form-msg").classList.add("show");
   });
 });
+
+// 6. Dynamic Auth State in Navbar
+if (typeof isAuthenticated === "function" && isAuthenticated()) {
+  const user = getUser();
+  const dashboardUrl = user && user.role === "admin" ? "admin-dashboard.html" : "student-dashboard.html";
+  const authNavHtml = `
+    <a href="${dashboardUrl}" class="btn-register" style="padding: 9px 18px;">Dashboard</a>
+    <button onclick="logoutUser()" class="btn-login" style="background: none; border: none; cursor: pointer; font-size: 14px;">Logout</button>
+  `;
+
+  const navActionButtons = document.getElementById("navActionButtons");
+  if (navActionButtons) {
+    navActionButtons.innerHTML = authNavHtml;
+  }
+
+  const menuAuthItems = document.getElementById("menuAuthItems");
+  if (menuAuthItems) {
+    menuAuthItems.innerHTML = authNavHtml;
+  }
+}

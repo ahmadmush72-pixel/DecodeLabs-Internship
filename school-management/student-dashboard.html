@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Dashboard - Sky Hawk School Management System</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+  </head>
+  <body>
+    <!-- Top Navigation -->
+    <header class="header">
+      <div class="nav-container">
+        <a href="index.html" class="logo">
+          <div class="logo-box">
+            <svg viewBox="0 0 24 24" class="cap-icon">
+              <path d="M22 10L12 5L2 10L12 15L22 10Z"></path>
+              <path
+                d="M6 12.5V16C6 18.8 8.7 20.5 12 20.5C15.3 20.5 18 18.8 18 16V12.5"
+              ></path>
+              <path d="M22 10V16"></path>
+            </svg>
+          </div>
+          <span class="logo-text">
+            <span class="text-sky">Sky</span>
+            <span class="text-hawk">Hawk</span>
+          </span>
+        </a>
+
+        <ul class="nav-menu" id="navMenu">
+          <li class="menu-close-row">
+            <button class="menu-close" id="menuClose" type="button">&times;</button>
+          </li>
+          <li><a href="index.html" class="nav-link">Main Site</a></li>
+          <li><a href="student-dashboard.html" class="nav-link active">Student Portal</a></li>
+          <li class="menu-auth">
+            <button onclick="logoutUser()" class="btn-logout">Logout</button>
+          </li>
+        </ul>
+
+        <div class="nav-buttons">
+          <button onclick="logoutUser()" class="btn-logout">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+              <polyline points="16 17 21 12 16 7"></polyline>
+              <line x1="21" y1="12" x2="9" y2="12"></line>
+            </svg>
+            Logout
+          </button>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="dashboard-wrapper">
+      <div class="dashboard-container">
+        
+        <!-- Header User Bar -->
+        <div class="dash-header-bar">
+          <div class="dash-user-badge">
+            <div class="dash-avatar" id="studentAvatar">S</div>
+            <div class="dash-user-info">
+              <h2 id="studentWelcomeName">Student</h2>
+              <p><span class="role-pill student-pill">Student Role</span> &bull; <span id="studentEmail">student@skyhawk.com</span></p>
+            </div>
+          </div>
+          <div class="dash-actions">
+            <button onclick="loadStudentProfile()" class="btn-table-action" style="padding: 8px 16px;">
+              Refresh Profile
+            </button>
+          </div>
+        </div>
+
+        <!-- Alert Notification Box -->
+        <div id="studentAlert" class="alert-box"></div>
+
+        <!-- Quick Summary Cards -->
+        <div class="stat-cards-grid">
+          <div class="stat-card">
+            <div class="stat-icon orange">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 10L12 5L2 10L12 15L22 10Z"></path>
+                <path d="M6 12.5V16C6 18.8 8.7 20.5 12 20.5C15.3 20.5 18 18.8 18 16V12.5"></path>
+              </svg>
+            </div>
+            <div class="stat-content">
+              <h3 id="statGradeLevel">Grade 10</h3>
+              <p>Current Enrolled Class</p>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon blue">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+            </div>
+            <div class="stat-content">
+              <h3 id="statAdmissionNo">SH-2026-001</h3>
+              <p>Admission Number</p>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon green">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+            <div class="stat-content">
+              <h3>Active</h3>
+              <p>Enrollment Status</p>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon purple">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <div class="stat-content">
+              <h3>Protected</h3>
+              <p>Personal Profile Access</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student Profile Information Cards -->
+        <div class="profile-grid">
+          
+          <!-- Personal Information Card -->
+          <div class="panel-card">
+            <div class="panel-card-header">
+              <h3>Personal Information</h3>
+            </div>
+            <div class="panel-card-body">
+              <div class="profile-detail-list">
+                <div class="profile-detail-item">
+                  <span class="label">Full Name:</span>
+                  <span class="value" id="profileFullName">--</span>
+                </div>
+                <div class="profile-detail-item">
+                  <span class="label">Email Address:</span>
+                  <span class="value" id="profileEmail">--</span>
+                </div>
+                <div class="profile-detail-item">
+                  <span class="label">Contact Phone:</span>
+                  <span class="value" id="profilePhone">--</span>
+                </div>
+                <div class="profile-detail-item">
+                  <span class="label">Date of Birth:</span>
+                  <span class="value" id="profileDob">--</span>
+                </div>
+                <div class="profile-detail-item">
+                  <span class="label">Gender:</span>
+                  <span class="value" id="profileGender">--</span>
+                </div>
+                <div class="profile-detail-item">
+                  <span class="label">Residential Address:</span>
+                  <span class="value" id="profileAddress">--</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Academic & Guardian Card -->
+          <div class="panel-card">
+            <div class="panel-card-header">
+              <h3>Academic &amp; Guardian Details</h3>
+            </div>
+            <div class="panel-card-body">
+              <div class="profile-detail-list">
+                <div class="profile-detail-item">
+                  <span class="label">Admission Number:</span>
+                  <span class="value" id="profileAdmissionNo">--</span>
+                </div>
+                <div class="profile-detail-item">
+                  <span class="label">Current Grade:</span>
+                  <span class="value" id="profileGrade">--</span>
+                </div>
+                <div class="profile-detail-item">
+                  <span class="label">Section:</span>
+                  <span class="value" id="profileSection">--</span>
+                </div>
+                <div class="profile-detail-item">
+                  <span class="label">Enrollment Status:</span>
+                  <span class="value"><span class="badge-status active">ACTIVE</span></span>
+                </div>
+                <div class="profile-detail-item">
+                  <span class="label">Guardian / Parent Name:</span>
+                  <span class="value" id="profileParentName">--</span>
+                </div>
+                <div class="profile-detail-item">
+                  <span class="label">Guardian Contact:</span>
+                  <span class="value" id="profileParentPhone">--</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-bottom">
+        <p>&copy; 2026 Sky Hawk School Management System. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/auth.js"></script>
+    <script>
+      // 1. Role-based protection: only 'student' can view this page
+      if (!protectPage('student')) {
+        // Redirect handled in protectPage
+      }
+
+      // Mobile Menu
+      const hamburger = document.getElementById("hamburger");
+      const navMenu = document.getElementById("navMenu");
+      const menuClose = document.getElementById("menuClose");
+      if (hamburger && navMenu) {
+        hamburger.addEventListener("click", () => navMenu.classList.toggle("open"));
+        menuClose.addEventListener("click", () => navMenu.classList.remove("open"));
+      }
+
+      // 2. Load authenticated student's profile from Laravel API
+      async function loadStudentProfile() {
+        const alertBox = document.getElementById('studentAlert');
+        alertBox.className = 'alert-box';
+
+        // Call the Student Profile API
+        const result = await apiRequest('/student/profile', 'GET');
+
+        if (result.ok && result.data.status) {
+          const student = result.data.data.student;
+          const user = student.user || getUser();
+
+          // Header Bar
+          document.getElementById('studentWelcomeName').textContent = user.name || 'Student';
+          document.getElementById('studentEmail').textContent = user.email || '';
+          document.getElementById('studentAvatar').textContent = (user.name || 'S')[0].toUpperCase();
+
+          // Stat Cards
+          document.getElementById('statGradeLevel').textContent = student.grade_level || 'Grade 10';
+          document.getElementById('statAdmissionNo').textContent = student.admission_number || 'SH-' + student.id;
+
+          // Personal Info
+          document.getElementById('profileFullName').textContent = user.name || 'N/A';
+          document.getElementById('profileEmail').textContent = user.email || 'N/A';
+          document.getElementById('profilePhone').textContent = student.phone || 'Not provided';
+          document.getElementById('profileDob').textContent = student.date_of_birth ? student.date_of_birth.substring(0, 10) : 'Not provided';
+          document.getElementById('profileGender').textContent = student.gender || 'Not specified';
+          document.getElementById('profileAddress').textContent = student.address || 'Not provided';
+
+          // Academic Info
+          document.getElementById('profileAdmissionNo').textContent = student.admission_number || 'SH-' + student.id;
+          document.getElementById('profileGrade').textContent = student.grade_level || 'Grade 10';
+          document.getElementById('profileSection').textContent = student.section || 'A';
+          document.getElementById('profileParentName').textContent = student.parent_name || 'Not provided';
+          document.getElementById('profileParentPhone').textContent = student.parent_phone || 'Not provided';
+        } else {
+          // If profile not yet created or error, fallback to user profile
+          const user = getUser();
+          if (user) {
+            document.getElementById('studentWelcomeName').textContent = user.name || 'Student';
+            document.getElementById('studentEmail').textContent = user.email || '';
+            document.getElementById('profileFullName').textContent = user.name || 'N/A';
+            document.getElementById('profileEmail').textContent = user.email || 'N/A';
+          }
+          alertBox.className = 'alert-box alert-error show';
+          alertBox.innerHTML = `<strong>${result.data.message || 'Unable to retrieve student profile from backend.'}</strong>`;
+        }
+      }
+
+      // Initial load
+      loadStudentProfile();
+    </script>
+  </body>
+</html>
